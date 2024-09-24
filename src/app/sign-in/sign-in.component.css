@@ -1,0 +1,30 @@
+#main-container{
+  background-image: url("/img/coffee-beans.png");
+  height: 100vh;
+  width: 100vw;
+
+  #coffee-cup-div{
+    background-image: url("/img/coffee-cup2.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+#content-div{
+  height: 90%;
+  width: 90%;
+  h3, p{
+    color: white;
+  }
+  div,form{
+    height: 100%;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+  }
+  #form-div{
+    background-color: black;
+    opacity: 50%;
+  }
+}
