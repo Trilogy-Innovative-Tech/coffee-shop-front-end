@@ -1,0 +1,76 @@
+<div id="main-container" class="mt-5 d-flex align-items-center justify-content-center w-100">
+  <form action="" class="w-50">
+    <div class="d-flex flex-column gap-2">
+      <h1 class="text-center">Create a new user account</h1>
+
+      <div class="d-flex gap-2 align-items-center">
+        <label>Name : </label>
+        <input type="text"
+               required
+               pattern="^[A-Za-z0-9 ]+$"
+               #inputNameNgModel="ngModel"
+               [(ngModel)]="name"
+               name="name"
+               placeholder="Eg : Yasith Perera"
+               class="form-control">
+      </div>
+      <div class="d-flex gap-2 align-items-center">
+        <label>Phone Number : </label>
+        <input type="text"
+               required
+               #inputPhoneNgModel="ngModel"
+               [(ngModel)]="contact"
+               name="contact"
+               placeholder="Eg : 071-1234567"
+               class="form-control">
+      </div>
+      <div class="d-flex gap-2 align-items-center">
+        <label>Email address : </label>
+        <input type="text"
+               required
+               #inputEmailNgModel="ngModel"
+               [(ngModel)]="email"
+               name="email"
+               placeholder="Eg : yasithishara@gmail.com"
+               class="form-control">
+      </div>
+      <div class="d-flex gap-2 align-items-center">
+        <label>Home address : </label>
+        <input type="text"
+               #inputAddressNgModel="ngModel"
+               name="address"
+               [(ngModel)]="address"
+               placeholder="Eg : No.123, Galle Road, Panadura"
+               class="form-control">
+      </div>
+      <div class="d-flex gap-2 align-items-center">
+        <label>Password : </label>
+        <input type="password"
+               required
+               name="password"
+               #inputPasswordNgModel="ngModel"
+               [(ngModel)]="password"
+               class="form-control">
+      </div>
+      <div class="d-flex gap-2 align-items-center">
+        <label>Role : </label>
+
+        <select [(ngModel)]="selectedOption" id="role_type" name="role" class="form-control">
+          <option value="" disabled>Select user type</option>
+          <option *ngFor="let option of options" [value]="option.value">{{ option.label }}</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" (click)="validate(inputNameNgModel);validate(inputEmailNgModel)">Create Account
+      </button>
+      <button class="btn btn-warning" type="reset">Cancel</button>
+    </div>
+  </form>
+  @if (inputEmailNgModel.dirty && inputEmailNgModel.invalid) {
+    <div class="px-2 mt-1">
+      <small class="text-danger">Input can't be blank and only allow letters and digits</small>
+    </div>
+  }
+
+
+</div>
+
