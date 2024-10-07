@@ -10,6 +10,7 @@
                pattern="^[A-Za-z0-9 ]+$"
                #inputNameNgModel="ngModel"
                [(ngModel)]="name"
+               name="name"
                placeholder="Eg : Yasith Perera"
                class="form-control">
       </div>
@@ -19,6 +20,7 @@
                required
                #inputPhoneNgModel="ngModel"
                [(ngModel)]="contact"
+               name="contact"
                placeholder="Eg : 071-1234567"
                class="form-control">
       </div>
@@ -28,6 +30,7 @@
                required
                #inputEmailNgModel="ngModel"
                [(ngModel)]="email"
+               name="email"
                placeholder="Eg : yasithishara@gmail.com"
                class="form-control">
       </div>
@@ -35,6 +38,7 @@
         <label>Home address : </label>
         <input type="text"
                #inputAddressNgModel="ngModel"
+               name="address"
                [(ngModel)]="address"
                placeholder="Eg : No.123, Galle Road, Panadura"
                class="form-control">
@@ -43,6 +47,7 @@
         <label>Password : </label>
         <input type="password"
                required
+               name="password"
                #inputPasswordNgModel="ngModel"
                [(ngModel)]="password"
                class="form-control">
@@ -50,7 +55,7 @@
       <div class="d-flex gap-2 align-items-center">
         <label>Role : </label>
 
-        <select [(ngModel)]="selectedOption" id="role_type" class="form-control">
+        <select [(ngModel)]="selectedOption" id="role_type" name="role" class="form-control">
           <option value="" disabled>Select user type</option>
           <option *ngFor="let option of options" [value]="option.value">{{ option.label }}</option>
         </select>

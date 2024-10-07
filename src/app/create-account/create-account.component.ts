@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component,AfterViewInit,OnInit} from '@angular/core';
 import {NgModel} from "@angular/forms";
 
 @Component({
@@ -6,20 +6,29 @@ import {NgModel} from "@angular/forms";
   templateUrl: './create-account.component.html',
   styleUrl: './create-account.component.css'
 })
-export class CreateAccountComponent {
+export class CreateAccountComponent /*implements AfterViewInit*/{
   name: string = "";
   email: string = "";
   contact: string = "";
   address: string = "";
   password: string = "";
 
+  selectedOption = '';
+
   options = [
-    { value: 'Admin', label: 'Admin' },
-    { value: 'Manager', label: 'Manager' },
-    { value: 'Cashier', label: 'Cashier' }
+    {value: 'Admin', label: 'Admin'},
+    {value: 'Manager', label: 'Manager'},
+    {value: 'Cashier', label: 'Cashier'}
   ];
 
-  selectedOption = '';
+  // ngAfterViewInit(): void {
+  //   this.options = [
+  //     {value: 'Admin', label: 'Admin'},
+  //     {value: 'Manager', label: 'Manager'},
+  //     {value: 'Cashier', label: 'Cashier'}
+  //   ];
+  // }
+
 
   validate(ngModel: NgModel) {
     ngModel.control.markAsDirty(); /* make the control dirty when validate button
